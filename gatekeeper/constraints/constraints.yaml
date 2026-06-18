@@ -5,7 +5,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "0"
 spec:
-  enforcementAction: warn
+  enforcementAction: deny
   match:
     kinds:
     - apiGroups: [""]
@@ -20,7 +20,7 @@ metadata:
   name: require-limit
   annotations: { argocd.argoproj.io/sync-wave: "0" }
 spec:
-  enforcementAction: warn
+  enforcementAction: deny
   match:
     kinds:
     - apiGroups: [""]
@@ -37,7 +37,7 @@ metadata:
   name: disallow-root
   annotations: { argocd.argoproj.io/sync-wave: "0" }
 spec:
-  enforcementAction: warn
+  enforcementAction: deny
   match:
     kinds:
     - apiGroups: [""]
@@ -54,7 +54,7 @@ metadata:
   name: disallow-host-networking
   annotations: { argocd.argoproj.io/sync-wave: "0" }
 spec:
-  enforcementAction: warn
+  enforcementAction: deny
   match:
     kinds:
     - apiGroups: [""]
