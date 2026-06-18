@@ -11,11 +11,11 @@ spec:
     - apiGroups: [""]
       kinds: ["Pod"]
   parameters:
-    tags: ["lastest"]
+    tags: ["latest"]
 ---
 
 apiVersion: constraints.gatekeeper.sh/v1beta1
-kind: K8sRequiredResource
+kind: K8sContainerLimits
 metadata:
   name: require-limit
   annotations: { argocd.argoproj.io/sync-wave: "0" }
@@ -26,7 +26,8 @@ spec:
     - apiGroups: [""]
       kinds: ["Pod"]
   parameters:
-    limits: ["cpu", "memory"]
+    cpu: "500m"
+    memory: "256Mi"
 
 ---
 
