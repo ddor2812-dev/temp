@@ -16,10 +16,10 @@ kind: ClusterRole
 metadata:
   name: sre
 rules:
-  -apiGroups: [""]
+  - apiGroups: [""]
     resources: ["pods", "pods/log", "pods/exec"]
     verbs: ["create", "watch", "list", "update", "patch", "delete"]
-  -apiGroups: [""]
+  - apiGroups: [""]
     resources: ["nodes", "namespace"]
     verbs: ["get", "list", "watch"]
 ---
@@ -29,6 +29,6 @@ kind: ClusterRole
 metadata:
   name: viewer
 rules:
-  -apiGroups: ["", "app", "batch"]
+  - apiGroups: ["", "app", "batch"]
     resources: ["*"]
     verbs: ["get", "list", "watch"]

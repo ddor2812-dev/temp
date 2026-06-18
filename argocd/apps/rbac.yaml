@@ -3,8 +3,8 @@ kind: Application
 metadata:
   name: rbac
   namespace: argocd
-annotations:
-  argocd.argoproj.io/sync-wave: "-1"
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
 spec:
   project: default
   source:
@@ -13,8 +13,10 @@ spec:
     targetRevision: main
   destination:
     server: https://kubernetes.default.svc
-    namespace: rbac
-syncPolicy:
-  automated:
-    prune: true
-    selfHeal: true
+    namespace: demo
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+    - ServerSideApply=true

@@ -4,9 +4,9 @@ metadata:
   name: alice-developer
   namespace: demo
 subjects:
-  -kind: User
-  name: alice
-  apiGroup: "rbac.authorization.k8s.io"
+  - kind: User
+    name: alice
+    apiGroup: "rbac.authorization.k8s.io"
 roleRef:
   kind: Role
   name: developer
@@ -19,9 +19,9 @@ kind: ClusterRoleBinding
 metadata:
   name: bob-sre
 subjects:
-  -kind: User
-  name: bob
-  apiGroup: "rbac.authorization.k8s.io"
+  - kind: User
+    name: bob
+    apiGroup: "rbac.authorization.k8s.io"
 roleRef:
   kind: ClusterRole
   name: sre
@@ -34,9 +34,9 @@ kind: ClusterRoleBinding
 metadata:
   name: carol-viewer
 subjects:
-  -kind: User
-  name: carol
-  apiGroup: "rbac.authorization.k8s.io"
+  - kind: User
+    name: carol
+    apiGroup: "rbac.authorization.k8s.io"
 roleRef:
   kind: ClusterRole
   name: viewer
