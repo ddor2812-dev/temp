@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gatekeeper-policies
+  namespace: argocd
+spec:
+  project: default
+  source: 
+    repoURL: https://github.com/ddor2812-dev/temp.git
+    path: gatekeeper
+    targetRevision: main
+    directory: { recurse: true }
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: gatekeeper-system
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

@@ -1,0 +1,67 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sDisallowedTags
+metadata:
+  name: disallow-latest-tag
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
+spec:
+  enforcementAction: warn
+  match:
+    kinds:
+    - apiGroups: [""]
+      kinds: ["Pod"]
+  parameters:
+    tags: ["lastest"]
+---
+
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sRequiredResource
+metadata:
+  name: require-limit
+  annotations: { argocd.argoproj.io/sync-wave: "0" }
+spec:
+  enforcementAction: warn
+  match:
+    kinds:
+    - apiGroups: [""]
+      kinds: ["Pod"]
+  parameters:
+    limits: ["cpu", "memory"]
+
+---
+
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPAllowedUsers
+metadata:
+  name: disallow-root
+  annotations: { argocd.argoproj.io/sync-wave: "0" }
+spec:
+  enforcementAction: warn
+  match:
+    kinds:
+    - apiGroups: [""]
+      kinds: ["Pod"]
+  parameters:
+    runAsUser:
+      rule: MustRunAsNonRoot
+
+---
+
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sPSPHostNetworkingPorts
+metadata:
+  name: disallow-host-networking
+  annotations: { argocd.argoproj.io/sync-wave: "0" }
+spec:
+  enforcementAction: warn
+  match:
+    kinds:
+    - apiGroups: [""]
+      kinds: ["Pod"]
+  parameters:
+    hostNetwork: false
+    min: 0
+    max: 65535
+    
+
+    
