@@ -10,6 +10,11 @@ spec:
     kinds:
     - apiGroups: [""]
       kinds: ["Pod"]
+    excludedNamespaces:
+    - "kube-system"
+    - "gatekeeper-system"
+    - "cosign-system"
+    - "argocd"
   parameters:
     tags: ["latest"]
 ---
@@ -25,6 +30,11 @@ spec:
     kinds:
     - apiGroups: [""]
       kinds: ["Pod"]
+    excludedNamespaces:
+    - "kube-system"
+    - "gatekeeper-system"
+    - "cosign-system"
+    - "argocd"
   parameters:
     cpu: "500m"
     memory: "256Mi"
@@ -42,6 +52,11 @@ spec:
     kinds:
     - apiGroups: [""]
       kinds: ["Pod"]
+    excludedNamespaces:
+    - "kube-system"
+    - "gatekeeper-system"
+    - "cosign-system"
+    - "argocd"
   parameters:
     runAsUser:
       rule: MustRunAsNonRoot
@@ -59,6 +74,11 @@ spec:
     kinds:
     - apiGroups: [""]
       kinds: ["Pod"]
+    excludedNamespaces:
+    - "kube-system"
+    - "gatekeeper-system"
+    - "cosign-system"
+    - "argocd"
   parameters:
     hostNetwork: false
     min: 0
