@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: policy-controller
+  name: image-policies
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "-2"   # ⭐ controller trước ClusterImagePolicy
+    argocd.argoproj.io/sync-wave: "1"   # Chạy sau policy-controller (Wave -2)
 spec:
   project: default
   source:
-    repoURL: https://sigstore.github.io/helm-charts
-    chart: policy-controller
-    targetRevision: 0.8.2
+    repoURL: https://github.com/ddor2812-dev/temp.git
+    path: policies
+    targetRevision: main
   destination:
     server: https://kubernetes.default.svc
     namespace: cosign-system

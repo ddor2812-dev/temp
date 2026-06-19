@@ -9,15 +9,8 @@ spec:
   - glob: "ghcr.io/ddor2812-dev/w10-api**"        
   authorities:
   - key:
-      data: |                             
-       -----BEGIN ENCRYPTED SIGSTORE PRIVATE KEY-----
-        eyJrZGYiOnsibmFtZSI6InNjcnlwdCIsInBhcmFtcyI6eyJOIjo2NTUzNiwiciI6
-        OCwicCI6MX0sInNhbHQiOiI5OS91QlpBTUJWR3BhVlBFaWdTd2x5UGkwbm5sZFN1
-        ckxxMnJNS3Z2QUZ3PSJ9LCJjaXBoZXIiOnsibmFtZSI6Im5hY2wvc2VjcmV0Ym94
-        Iiwibm9uY2UiOiJ2RHhGYWZ0WkU0SWo0Zlo4THFlZlVjbXY1YVc2ZkhHQSJ9LCJj
-        aXBoZXJ0ZXh0IjoiVXU2dGlxb2xjMG9aQmJsS2hIRXdBWmdhRjROS1VONVgxdVgr
-        MG5TeEYzajh5RjJEY0V3djdGL0pGT3lFb1F2NnBrZEhVb3hOQzhuZ3dmQXdHQmUz
-        V0JRRXZVT1NHaUNWWU12S1dXbEVqVjVuWWphdmZybU8zYWxqY3RETGVKbTNvZlgx
-        eVFPcUxldVJ6VGN5VzRrTVdNZE9mUGw4RVZUSkhZUUswNHltaEMyNGo2VVdZcVdj
-        RFh5QUV4TVhYeHFwZm5wcExEcE12WUxuMnc9PSJ9
-        -----END ENCRYPTED SIGSTORE PRIVATE KEY-----
+      data: |
+        -----BEGIN PUBLIC KEY-----
+        MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEQW8riimyL7sTQ6sX68SFy/+Y7O4x
+        2UsnPkW8MDdWHlN5jcS583jbh5fQ3e1Andc1VjGqjx2fosrOlUg2c0aQfg==
+        -----END PUBLIC KEY-----
