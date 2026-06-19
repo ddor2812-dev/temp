@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://sigstore.github.io/helm-charts
+    repoURL: ghcr.io/sigstore/helm-charts
     chart: policy-controller
     targetRevision: 0.8.2
   destination:
