@@ -1,0 +1,16 @@
+apiVersion:  argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: eso-configmaps
+  namespace: argocd
+spec:
+  proejet: default
+  source:
+    repoURL: https://github.com/ddor2812-dev/temp.git
+    path: eso
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: demo
+  syncPolicy:
+    automated: { prune: true, selfHeal: true }

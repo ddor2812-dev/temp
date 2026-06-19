@@ -22,6 +22,10 @@ spec:
       securityContext:
         runAsNonRoot: true
         runAsUser: 1000
+      volumes:
+      - name: db-secret
+        secret:
+          secretName: db-credentials
       containers:
       - name: api
         image: ddor2812/gitops-api:1
@@ -34,6 +38,10 @@ spec:
           value: "v1"
         - name: ERROR_RATE
           value: "0"
+        volumeMounts:
+        - name: db-secret
+          mountPath: /etc/secrets
+          readOnly: true
         livenessProbe:
           httpGet:
             path: /healthz
