@@ -64,5 +64,20 @@ spec:
     min: 0
     max: 65535
     
+---
+
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: K8sLimitReplicas
+metadata:
+  name: max-5-replicas
+  annotations: { argocd.argoproj.io/sync-wave: "0" }   
+spec:
+  enforcementAction: deny
+  match:
+    kinds:
+    - apiGroups: ["apps"]      
+      kinds: ["Deployment"]    
+  parameters:
+    maxReplicas: 5     
 
     
