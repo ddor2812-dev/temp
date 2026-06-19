@@ -3,8 +3,10 @@ kind: Application
 metadata:
   name: eso-configmaps
   namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
-  proejet: default
+  project: default
   source:
     repoURL: https://github.com/ddor2812-dev/temp.git
     path: eso
